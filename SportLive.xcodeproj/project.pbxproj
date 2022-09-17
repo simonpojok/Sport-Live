@@ -13,6 +13,7 @@
 		6E92CCDE28D5BB910082D26A /* ScheduledEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92CCDD28D5BB910082D26A /* ScheduledEventModel.swift */; };
 		6E92CCE228D5BC6D0082D26A /* PastEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92CCE128D5BC6D0082D26A /* PastEventsViewModel.swift */; };
 		6E92CCE628D5BCA40082D26A /* PastEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92CCE528D5BCA40082D26A /* PastEventViewModel.swift */; };
+		6E92CCE828D5C6DE0082D26A /* PastEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E92CCE728D5C6DE0082D26A /* PastEventTableViewCell.swift */; };
 		6EA3510E28D03CF40064ED05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3510D28D03CF40064ED05 /* AppDelegate.swift */; };
 		6EA3511028D03CF40064ED05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3510F28D03CF40064ED05 /* SceneDelegate.swift */; };
 		6EA3511228D03CF40064ED05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3511128D03CF40064ED05 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		6E92CCDD28D5BB910082D26A /* ScheduledEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledEventModel.swift; sourceTree = "<group>"; };
 		6E92CCE128D5BC6D0082D26A /* PastEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventsViewModel.swift; sourceTree = "<group>"; };
 		6E92CCE528D5BCA40082D26A /* PastEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventViewModel.swift; sourceTree = "<group>"; };
+		6E92CCE728D5C6DE0082D26A /* PastEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventTableViewCell.swift; sourceTree = "<group>"; };
 		6EA3510A28D03CF40064ED05 /* SportLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA3510D28D03CF40064ED05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EA3510F28D03CF40064ED05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				6EA3512428D041530064ED05 /* PastEventsViewController.swift */,
 				6E92CCE128D5BC6D0082D26A /* PastEventsViewModel.swift */,
+				6E92CCE728D5C6DE0082D26A /* PastEventTableViewCell.swift */,
 			);
 			path = PastEvents;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				6E92CCE628D5BCA40082D26A /* PastEventViewModel.swift in Sources */,
 				6EA3511228D03CF40064ED05 /* ViewController.swift in Sources */,
 				6E92CCDC28D5BA920082D26A /* PastEventModel.swift in Sources */,
+				6E92CCE828D5C6DE0082D26A /* PastEventTableViewCell.swift in Sources */,
 				6EA3512328D03F4E0064ED05 /* MainTabViewController.swift in Sources */,
 				6E92CCDE28D5BB910082D26A /* ScheduledEventModel.swift in Sources */,
 				6EA3510E28D03CF40064ED05 /* AppDelegate.swift in Sources */,
