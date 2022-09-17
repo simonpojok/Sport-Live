@@ -38,7 +38,9 @@ class MainTabViewController: UITabBarController {
         let pastEventsViewController = templateNavigationController(
             unselectedImage: UIImage(systemName: "square.fill"),
             selectedImage: UIImage(systemName: "square.fill"),
-            rootViewController: PastEventsViewController()
+            rootViewController: PastEventsViewController(
+                viewModel: PastEventsViewModel()
+            )
         )
         
         viewControllers = [pastEventsViewController, scheduledEventsViewController]

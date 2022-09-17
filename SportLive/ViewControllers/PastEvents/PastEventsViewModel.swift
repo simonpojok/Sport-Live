@@ -37,7 +37,10 @@ extension PastEventsViewModel {
                 self.pastEventViewModels = events.map { event in
                     return PastEventViewModel(event: event)
                 }
-                self.eventsDelegate.eventsDidLoad()
+                
+                DispatchQueue.main.async {
+                    self.eventsDelegate.eventsDidLoad()
+                }
             })
             .disposed(by: disposeBag)
     }
