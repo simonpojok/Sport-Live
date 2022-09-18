@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SDWebImage
 
 class PastEventTableViewCell: UITableViewCell {
     private let disposeBag = DisposeBag()
@@ -22,12 +23,14 @@ class PastEventTableViewCell: UITableViewCell {
     
     private let eventTitleLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
     
     private let eventSubTitleLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 13)
         return label
     }()
@@ -56,7 +59,7 @@ extension PastEventTableViewCell {
             top: topAnchor,
             left: leftAnchor,
             bottom: bottomAnchor,
-            width: frame.width * 0.4
+            width: 120
         )
         
         addSubview(eventTitleLabel)
@@ -88,8 +91,38 @@ extension PastEventTableViewCell {
     }
     
     func configure(viewModel: PastEventViewModel) {
-        viewModel.image.asDriver(onErrorJustReturn: UIImage(systemName: "photo.artframe")!)
-            .drive(eventImageView.rx.image)
+        viewModel.image.asDriver(onErrorJustReturn: "")
+            .drive(onNext: { url in
+                self.eventImageView.sd_setImage(
+                    with: URL(string: url),
+                    placeholderImage: UIImage(systemName: "photo.artframe")
+                )
+
+            })
+            .disposed(by: self.disposeBag)
+        
+        viewModel.title.asDriver(onErrorJustReturn: "")
+            .drive(eventTitleLabel.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        viewModel.subtitle.asDriver(onErrorJustReturn: "")
+            .drive(eventSubTitleLabel.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        viewModel.date.asDriver(onErrorJustReturn: "")
+            .drive(eventDateLabel.rx.text)
+            .disposed(by: self.disposeBag)
+    }
+    
+    func configure(viewModel: ScheduledEventViewModel) {
+        viewModel.imageUrl.asDriver(onErrorJustReturn: "")
+            .drive(onNext: { url in
+                self.eventImageView.sd_setImage(
+                    with: URL(string: url),
+                    placeholderImage: UIImage(systemName: "photo.artframe")
+                )
+
+            })
             .disposed(by: self.disposeBag)
         
         viewModel.title.asDriver(onErrorJustReturn: "")

@@ -26,15 +26,7 @@ extension PastEventViewModel {
         return Observable<String>.just(event.date)
     }
     
-    var image: Observable<UIImage> {
-        guard let url = URL(string: event.imageUrl) else {
-            return Observable<UIImage>.just(UIImage(systemName: "photo.artframe")!)
-        }
-        
-        guard let data = try? Data(contentsOf: url) else {
-            return Observable<UIImage>.just(UIImage(systemName: "photo.artframe")!)
-        }
-        
-        return Observable<UIImage>.just(UIImage(data: data)!)
+    var image: Observable<String> {
+        return Observable<String>.just(event.imageUrl)
     }
 }
